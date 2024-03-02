@@ -1,0 +1,272 @@
+/* global */
+$color_1: black;
+$color_2: white;
+$color_3: #707070;
+$color_4: #404040;
+$color_5: #fff;
+$color_6: rgb(148, 0, 0);
+$color_7: seagreen;
+$background-color_1: #2ca49c;
+$background-color_2: #404040;
+$background-color_3: #e3e3e3;
+$background-color_4: #fff;
+$background-color_5: #676464;
+$background-color_6: black;
+$background-color_7: #707070;
+$border-color_1: transparent;
+
+* {
+  box-sizing: border-box;
+}
+header {
+  display: block;
+}
+section {
+  display: block;
+}
+footer {
+  display: block;
+}
+aside {
+  display: block;
+}
+nav {
+  display: block;
+}
+main {
+  display: block;
+}
+article {
+  display: block;
+}
+figure {
+  display: block;
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.container {
+  a {
+    text-decoration: none;
+  }
+}
+#content {
+  background: #fff;
+  width: 100%;
+}
+
+/* admin body */
+.admin-body {
+  margin-bottom: 150px;
+}
+.admin-table {
+  margin-top: 100px;
+}
+.card-header {
+  &:first-child {
+    background: linear-gradient(
+      109.6deg,
+      rgb(17, 151, 147) 11.2%,
+      rgb(154, 214, 212) 55.4%,
+      rgb(255, 233, 171) 100.2%
+    );
+    border-radius: 10px;
+    padding: 18px;
+  }
+}
+#arrowDown {
+  &:before {
+    display: none;
+  }
+}
+button#addPhone {
+  &:hover {
+    background: white;
+    color: $color_1;
+    transition: 0.3s;
+  }
+}
+.product-table {
+  thead {
+    th {
+      background-color: $background-color_1;
+      color: $color_2;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+tr {
+  td.action-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#editBtn {
+  width: fit-content;
+  i {
+    margin-left: 6px;
+    display: inline-block;
+  }
+}
+#DeleteBtn {
+  width: fit-content;
+}
+#deleteBtn {
+  i {
+    margin-left: 6px;
+    display: inline-block;
+  }
+}
+#searchBtn {
+  background-color: $background-color_2;
+  color: $color_2;
+  border: transparent;
+  outline: none;
+}
+.sort-price {
+  display: none;
+}
+
+/* admin footer */
+#admin-footer {
+  background-color: $background-color_3;
+  ul {
+    li {
+      margin: 5px 0;
+    }
+    a {
+      color: $color_3;
+      transition: 0.3s;
+      &:hover {
+        color: $color_1;
+      }
+    }
+  }
+  p {
+    color: $color_4;
+    font-weight: 500;
+    font-size: 18px;
+    i {
+      font-size: 20px;
+    }
+  }
+}
+#submitFormEmailFt {
+  input {
+    background-color: $background-color_4;
+    color: $color_3;
+    width: 70%;
+    font-size: 16px;
+    padding: 13px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 8px 0 0 8px;
+    flex: 1 1 auto;
+    outline: none;
+  }
+  button {
+    color: $color_5;
+    background-color: $background-color_5;
+    background-size: 200%;
+    width: 30%;
+    padding: 12px 10px;
+    text-align: center;
+    border-radius: 0 8px 8px 0;
+    border-color: $border-color_1;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.7;
+      background-color: $background-color_6;
+    }
+  }
+}
+.copyrights {
+  .row {
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+}
+.footer-icon {
+  font-size: 16px;
+  margin-right: 8px;
+  a {
+    background-color: $background-color_7;
+    color: $color_5;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+    &:hover {
+      background: #fff;
+      color: $color_4;
+    }
+  }
+}
+
+/* notification */
+.sp-noti {
+  color: $color_6;
+  margin-top: 7px;
+  margin-left: 2px;
+  display: none;
+  i {
+    color: $color_7;
+  }
+}
+
+/* spinner */
+#loading {
+  background: #e8e8e8;
+  opacity: 0.7;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* sort table */
+#priceColumn {
+  cursor: pointer;
+}
+#priceColumn.th-sort-asc {
+  &::before {
+    content: "\25b4";
+    margin-right: 5px;
+  }
+  color: $color_5;
+}
+#priceColumn.th-sort-desc {
+  &::before {
+    content: "\25be";
+    margin-right: 5px;
+  }
+  color: $color_5;
+}
+@media (max-width: 629px) {
+  #editBtn {
+    span {
+      display: none;
+    }
+  }
+  #deleteBtn {
+    span {
+      display: none;
+    }
+  }
+}
