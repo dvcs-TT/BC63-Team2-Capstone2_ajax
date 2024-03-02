@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Afone</title>
+    <!-- bootstrap 5.0.1 css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+      integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <!-- font awesome css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- owl css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- toastify css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <!-- my CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- start | HEADER -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top mb-5">
+        <div class="container">
+          <div class="logo d-flex">
+            <a class="navbar-brand me-5" href="#">
+              <i class="fab fa-atlassian"></i> Afone
+            </a>
+          </div>
+
+          <form
+            id="searchBox"
+            class="searchDiv d-flex justify-content-center"
+            method="get"
+            action="/tim-kiem"
+            onsubmit="return submitSearch(this);"
+            enctype="application/x-www-form-urlencoded"
+          >
+            <input type="search" name="s" placeholder="" />
+          </form>
+
+          <div class="adminCart d-flex justify-content-end">
+            <a
+              class="nav-link active"
+              href="admin/view/admin.html"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <div id="adminPortal">
+                <i class="fa fa-server"></i>
+              </div>
+              <!-- Admin Portal -->
+            </a>
+
+            <a
+              class="nav-link js-toggle-cart active"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <div id="cart">
+                <i class="fa-solid fa-xl fa-shopping-cart"></i>
+                <span
+                  class="badge rounded-pill badge-notification bg-light text-dark"
+                  id="cartCount"
+                ></span>
+              </div>
+              <!-- Cart -->
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- start | category -->
+      <div class="ctgr">
+        <div class="container">
+          <ul class="root">
+            <li id="dien-thoai-di-dong">
+              <a href="#" target="_self">
+                <i class="fa fa-mobile-alt"></i>
+                <span>cellphones</span>
+              </a>
+              <div class="sub-container">
+                <div class="sub">
+                  <div class="menu g1">
+                    <h4><a href="#">Brands</a></h4>
+                    <ul class="display-column format_3">
+                      <li><a href="#">Apple</a></li>
+                      <li><a href="#">Samsung</a></li>
+                      <li><a href="#">Xiaomi</a></li>
+                      <li><a href="#">OPPO</a></li>
+                      <li><a href="#">Nokia</a></li>
+                      <li><a href="#">realme</a></li>
+                      <li><a href="#">Vivo</a></li>
+                      <li><a href="#">Nubia</a></li>
+                      <li><a href="#">Energizer</a></li>
+                      <li><a href="#">XOR</a></li>
+                      <li><a href="#">Masstel</a></li>
+                      <li><a href="#">TCL</a></li>
+                      <li><a href="#">Philips</a></li>
+                      <li><a href="#">Itel</a></li>
+                      <li><a href="#">BPhone</a></li>
+                      <li><a href="#">TECNO</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="dong-ho">
+              <a href="#" target="_self">
+                <i class="fa fa-clock"></i>
+                <span>Watches</span>
+              </a>
+              <div class="sub-container">
+                <div class="sub">
+                  <div class="menu g0">
+                    <h4><a>Brands</a></h4>
+                    <ul class="display-column format_4">
+                      <li><a href="#">Apple</a></li>
+                      <li><a href="#">Samsung</a></li>
+                      <li><a href="#">Xiaomi</a></li>
+                      <li><a href="#">Garmin</a></li>
+                      <li><a href="#">Tic Watch</a></li>
+                      <li><a href="#">Amazfit</a></li>
+                      <li><a href="#">Huawei </a></li>
+                      <li><a href="#">Kieslect</a></li>
+                      <li><a href="#">Masstel</a></li>
+                      <li><a href="#">OPPO</a></li>
+                      <li><a href="#">realme</a></li>
+                      <li><a href="#">SoundPEATS</a></li>
+                      <li><a href="#">Fitbit</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="laptop">
+              <a href="#" target="_self">
+                <i class="fa fa-laptop"></i>
+                <span>Laptop</span>
+              </a>
+              <div class="sub-container">
+                <div class="sub">
+                  <div class="menu g1">
+                    <h4><a href="#">Brands</a></h4>
+                    <ul class="display-column format_3">
+                      <li><a href="#">Apple</a></li>
+                      <li><a href="#">Acer</a></li>
+                      <li><a href="#">ASUS</a></li>
+                      <li><a href="#">Dell</a></li>
+                      <li><a href="#">MSI</a></li>
+                      <li><a href="#">HP</a></li>
+                      <li><a href="#">Huawei</a></li>
+                      <li><a href="#">Lenovo</a></li>
+                      <li><a href="#">LG</a></li>
+                      <li><a href="#">Surface</a></li>
+                      <li><a href="#">GIGABYTE</a></li>
+                      <li><a href="#">Xiaomi</a></li>
+                      <li><a href="#">Masstel</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="man-hinh">
+              <a href="#" target="_self">
+                <i class="fa fa-desktop"></i>
+                <span>Monitors</span>
+              </a>
+              <div class="sub-container">
+                <div class="sub">
+                  <div class="menu g0">
+                    <h4><a href="#">Brands</a></h4>
+                    <ul class="display-column format_2">
+                      <li><a href="#">Acer</a></li>
+                      <li><a href="#">AOC</a></li>
+                      <li><a href="#">Asus</a></li>
+                      <li><a href="#">Dell</a></li>
+                      <li><a href="#">GIGABYTE</a></li>
+                      <li><a href="#">HP</a></li>
+                      <li><a href="#">Huawei</a></li>
+                      <li><a href="#">Lenovo</a></li>
+                      <li><a href="#">LG</a></li>
+                      <li><a href="#">MSI</a></li>
+                      <li><a href="#">Samsung</a></li>
+                      <li><a href="#">Viewsonic</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="smart-tv">
+              <a href="#" target="_self">
+                <i class="fa fa-tv"></i>
+                <span>Smart TV</span>
+              </a>
+              <div class="sub-container">
+                <div class="sub">
+                  <div class="menu g1">
+                    <h4><a href="#">Brands</a></h4>
+                    <ul class="display-column format_1">
+                      <li><a href="#">TV Xiaomi</a></li>
+                      <li><a href="#">TV Casper</a></li>
+                      <li><a href="#">TV Itel</a></li>
+                      <li><a href="#">TV Samsung</a></li>
+                      <li><a href="#">TV Toshiba</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="tablet">
+              <a href="#" target="_self">
+                <i class="fa fa-tablet-alt"></i>
+                <span>Tablet</span>
+              </a>
+              <div class="sub-container">
+                <div class="sub">
+                  <div class="menu g2">
+                    <h4><a href="#">Brands</a></h4>
+                    <ul class="display-column format_3">
+                      <li><a href="#">Samsung</a></li>
+                      <li><a href="#">Apple</a></li>
+                      <li><a href="#">Lenovo</a></li>
+                      <li><a href="#">MS Surface</a></li>
+                      <li><a href="#">OPPO</a></li>
+                      <li><a href="#">Yuho</a></li>
+                      <li><a href="#">Xiaomi</a></li>
+                      <li><a href="#">Huawei</a></li>
+                      <li><a href="#">Nokia</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- end | category -->
+    </header>
+    <!-- end | HEADER -->
+
+    <!-- start | CAROUSEL -->
+    <div class="container">
+      <div class="carousel owl-carousel">
+        <div class="card card-1"></div>
+        <div class="card card-2"></div>
+        <div class="card card-3"></div>
+        <div class="card card-4"></div>
+        <div class="card card-5"></div>
+      </div>
+    </div>
+    <!-- end | CAROUSEL -->
+
+    <!-- start | PURCHASING -->
+    <div class="container" id="content-wrap">
+      <main role="main" class="pb-5 mb-5">
+        <div class="container">
+          <div class="my-5">
+            <!-- start | filter -->
+            <div class="container">
+              <select
+                class="form-select w-25 mb-5"
+                id="selectList"
+                onchange="brandFilter()"
+                aria-label=""
+              >
+                <option value="all">All Brands</option>
+                <option value="Iphone">Iphone</option>
+                <option value="Samsung">Samsung</option>
+              </select>
+            </div>
+            <!-- end | filter -->
+
+            <!-- start | phone list -->
+            <div class="row mx-0 gy-4" id="phoneList"></div>
+            <!-- end | phone list -->
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- end | PURCHASING -->
+
+    <!-- start | HIDDEN CART -->
+    <div class="meh">
+      <div class="cart is-hidden">
+        <div class="cart__overlay"></div>
+        <div class="cart__contents">
+          <div class="cart__products">
+            <h2>Shopping Cart</h2>
+            <div class="products" id="cartList"></div>
+          </div>
+          <div class="cart__totals">
+            <table class="totals">
+              <tbody>
+                <tr>
+                  <th class="align-left font-normal tertiary">Subtotal</th>
+                  <td class="align-right" id="subTotal">$0</td>
+                </tr>
+                <tr>
+                  <th class="align-left font-normal tertiary">Shipping</th>
+                  <td class="align-right" id="shipping">$0</td>
+                </tr>
+                <tr>
+                  <th class="align-left font-normal tertiary">Tax</th>
+                  <td class="align-right" id="tax">$0</td>
+                </tr>
+                <tr>
+                  <th class="align-left">Total</th>
+                  <td class="align-right" id="priceTotal">$0</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="form__footer">
+              <button class="btn first js-toggle-cart">
+                Continue Shopping
+              </button>
+              <button class="btn yellow-btn" onclick="payNow()">Pay Now</button>
+              <button
+                class="btn me-5 ms-0 px-4 red-btn"
+                onclick="emptyCart()"
+                id="emptyCart"
+              >
+                <i class="fa-solid fa-trash me-2"></i> Empty Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end | HIDDEN CART -->
+
+    <!-- start | FOOTER -->
+    <footer class="pt-3" id="footer-v0">
+      <div class="main pt-0 pt-lg-3 mt-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-4 order-0 order-lg-0 mb-4 mb-lg-0">
+              <p><b>Get to Know Us</b></p>
+              <ul>
+                <li><a href="#">About Afone</a></li>
+                <li><a href="#">Repairing service (09:00 - 19:00)</a></li>
+                <li><a href="#">Warranty</a></li>
+                <li><a href="#">Become an Affiliate</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg 4 order-1 order-lg-1">
+              <p><b>Purchasing</b></p>
+              <ul>
+                <li><a href="#">How to Buy on Afone</a></li>
+                <li><a href="#">Shipping & payment</a></li>
+                <li><a href="#">Returns & Replacements</a></li>
+                <li><a href="#">Terms & conditions</a></li>
+              </ul>
+            </div>
+            <div
+              class="col-12 col-lg-4 order-2 order-lg-2 mb-4 mb-lg-0 pt-3 pb-3 pt-lg-0 pb-lg-0"
+            >
+              <div class="send-mail">
+                <p><b>Sign up to our newsletter</b></p>
+                <form
+                  action=""
+                  method="post"
+                  class="mt-1"
+                  id="submitFormEmailFt"
+                  onsubmit="submitRegisterEmail(this)"
+                >
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Enter your email here"
+                  />
+                  <input type="hidden" name="type" value="1" />
+                  <input type="hidden" name="token" value="" />
+                  <button>
+                    <span class="submit-email-ft" id="submitEmailFt">
+                      <i class="fa fa-paper-plane"></i>
+                    </span>
+                  </button>
+                </form>
+              </div>
+              <div class="payment-method mt-3">
+                <div class="align-items-center">
+                  <p class="mb-1"><b>Payment method</b></p>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img
+                      src="./assets/img/payment-method-visa.jpg"
+                      alt="Visa"
+                    />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img src="./assets/img/payment-method-jcb.jpg" alt="JCB" />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img
+                      src="./assets/img/payment-method-mastercard.jpg"
+                      alt="Master Card"
+                    />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img
+                      src="./assets/img/payment-method-vnpay.jpg"
+                      alt="VN Pay"
+                    />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img
+                      src="./assets/img/payment-method-zalopay.jpg"
+                      alt="ZaloPay"
+                    />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img
+                      src="./assets/img/payment-method-momo.jpg"
+                      alt="Momo"
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="noshade" style="color: antiquewhite" />
+      <div class="container py-1 mt-1">
+        <p class="text-center">
+          2015 - 2023
+          <i class="fab fa-atlassian"></i> Afone - All Rights Reserved
+        </p>
+      </div>
+    </footer>
+    <!-- end | FOOTER -->
+
+    <!-- start | SCRIPTS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+      integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+      integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- owl js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+      integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      $(".carousel").owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false,
+          },
+          600: {
+            items: 2,
+            nav: false,
+          },
+          1000: {
+            items: 3,
+            nav: false,
+          },
+        },
+      });
+    </script>
+
+    <!-- Toastify -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <!-- change nav bar color when scroll -->
+    <script>
+      $(window).on("scroll", function () {
+        if (this.scrollY > 45) {
+          $("nav").addClass("green");
+        } else {
+          $("nav").removeClass("green");
+        }
+      });
+    </script>
+
+    <!-- toggle shopping cart -->
+    <script>
+      $(".js-toggle-cart, .cart__overlay").on("click", function () {
+        $(".cart").toggleClass("is-hidden");
+      });
+    </script>
+
+    <!-- models -->
+    <script src="./customer/models/Product.js"></script>
+    <script src="./customer/models/CartItem.js"></script>
+    
+    <!-- services -->
+    <script src="./customer/services/PhoneServices.js"></script>
+    <script src="./customer/services/CartServices.js"></script>
+
+    <!-- main scripts -->
+    <script src="./customer/controllers/main.js"></script>
+
+    <!-- end | SCRIPTS -->
+  </body>
+</html>
