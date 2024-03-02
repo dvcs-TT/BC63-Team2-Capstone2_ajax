@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Afone - Admin</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    />
+
+    <!-- Font GG -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Toast CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <!-- Bootstrap 4.3.1 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optimized BS CSS -->
+    <link rel="stylesheet" href="./css/bs-optimize.css" />
+
+    <!-- Modal Form CSS -->
+    <link rel="stylesheet" href="./css/modal.css" />
+    <!-- Admin main CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+  </head>
+
+  <body>
+    <!-- Spinner -->
+    <div id="loading" class="spinner">
+      <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div class="wrapper">
+      <!-- Sidebar Holder -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>
+            <i class="fab fa-atlassian"></i>
+            Afone Admin
+          </h3>
+          <strong><i class="fab fa-atlassian"></i></strong>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="#">
+              <i class="fa fa-mobile-alt"></i>
+              Manage Products
+            </a>
+          </li>
+          <li>
+            <a href="../../index.html">
+              <i class="fa fa-user"></i>
+              User Page
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-briefcase"></i>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-paperclip"></i>
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-paper-plane"></i>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content Holder -->
+      <div id="content">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button
+                type="button"
+                id="sidebarCollapse"
+                class="btn btn-primary navbar-btn"
+              >
+                <i class="fa fa-align-justify"></i>
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container admin-body">
+          <!-- Card header -->
+          <div class="card-header myCardHeader">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="text-left text-light font-weight-bold">
+                  Phone Management
+                </h3>
+              </div>
+              <div class="col-md-6 text-right">
+                <button
+                  class="btn btn-info"
+                  id="addPhone"
+                  data-toggle="modal"
+                  data-target="#prodModal"
+                >
+                  <i class="fa fa-plus-circle me-2"></i>
+                  Add Phone
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search Input -->
+          <div class="card-body search-btn">
+            <div class="row mb-4">
+              <div class="col">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter name of Product"
+                    id="searchProduct"
+                  />
+                  <div class="input-group-prepend">
+                    <button class="input-group-text" id="searchBtn">
+                      <span>Search</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive text-center">
+            <table class="table table-bordered table-hover product-table">
+              <thead class="text-primary">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th id="priceColumn">Price</th>
+                  <th>Photo</th>
+                  <th>Description</th>
+                  <th><em class="fa fa-cog mr-1"></em>Action</th>
+                </tr>
+              </thead>
+              <tbody id="tableList"></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="admin-footer">
+          <div class="main pt-lg-4 pt-sx-3 pt-4">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-lg-4 order-0 order-lg-0 mb-4 mb-lg-0">
+                  <p><b>Get to Know Us</b></p>
+                  <ul>
+                    <li><a href="#">About Afone</a></li>
+                    <li>
+                      <a href="#">Repairing service (09:00 - 19:00)</a>
+                    </li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+                </div>
+                <div class="purchase col-12 col-lg 4 order-1 order-lg-1">
+                  <p><b>Purchasing</b></p>
+                  <ul>
+                    <li><a href="#">How to Buy on Afone</a></li>
+                    <li><a href="#">Shipping & payment</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Terms & conditions</a></li>
+                  </ul>
+                </div>
+                <div
+                  class="newsletter col-12 col-lg-4 order-2 order-lg-2 mb-4 mb-lg-0 pt-3 pb-3 pt-lg-0 pb-lg-0"
+                >
+                  <div class="send-mail">
+                    <p><b>Sign up to our newsletter</b></p>
+                    <form class="mt-1 d-flex" id="submitFormEmailFt">
+                      <input
+                        type="text"
+                        name="email"
+                        placeholder="Enter your email here"
+                      />
+                      <button>
+                        <span class="submit-email-ft" id="submitEmailFt">
+                          <i class="fa fa-paper-plane"></i>
+                        </span>
+                      </button>
+                    </form>
+                  </div>
+                  <!-- <div class="payment-method mt-3">
+                <div class="align-items-center">
+                  <p class="mb-1"><b>Payment method</b></p>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img src="./img/payment-method-visa.jpg" alt="Visa" />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img src="./img/payment-method-jcb.jpg" alt="JCB" />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img
+                      src="./img/payment-method-mastercard.jpg"
+                      alt="Master Card"
+                    />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img src="./img/payment-method-vnpay.jpg" alt="VN Pay" />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img src="./img/payment-method-zalopay.jpg" alt="ZaloPay" />
+                  </span>
+                  <span class="my-1 my-lg-0 d-inline-block">
+                    <img src="./img/payment-method-momo.jpg" alt="Momo" />
+                  </span>
+                </div>
+              </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="noshade" />
+          <div class="copyrights container py-1 mt-1">
+            <div class="row d-flex">
+              <p class="text-center">
+                2015 - 2023
+                <i class="fab fa-atlassian"></i>
+                Afone - All Rights Reserved
+              </p>
+              <div class="footer-icon">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="prodModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <header class="head-form text-center mb-3">
+            <h2 id="header-title">Phone Management</h2>
+          </header>
+
+          <!-- Modal body -->
+          <form role="form">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-mobile"></i
+                  ></span>
+                </div>
+                <input
+                  type="name"
+                  name="phone-name"
+                  id="name"
+                  class="form-control input-sm"
+                  placeholder="Phone Name"
+                />
+              </div>
+              <span class="sp-noti" id="nameNoti"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-donate"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="price"
+                  id="price"
+                  class="form-control input-sm"
+                  placeholder="Price"
+                />
+              </div>
+
+              <span class="sp-noti" id="priceNoti"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-mobile-alt"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="screen"
+                  id="screen"
+                  class="form-control input-sm"
+                  placeholder="Screen"
+                />
+              </div>
+              <span class="sp-noti" id="screenNoti"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-camera"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="back-camera"
+                  id="backCamera"
+                  class="form-control input-sm"
+                  placeholder="Back Camera"
+                />
+              </div>
+              <span class="sp-noti" id="backCamNoti"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-camera-retro"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="front-camera"
+                  id="frontCamera"
+                  class="form-control input-sm"
+                  placeholder="Front Camera"
+                />
+              </div>
+              <span class="sp-noti" id="frontCamNoti"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-link"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="immage-link"
+                  id="img"
+                  class="form-control input-sm"
+                  placeholder="Image Link"
+                />
+              </div>
+              <span class="sp-noti" id="imgNoti"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa fa-comment-dots"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="description"
+                  id="desc"
+                  class="form-control input-sm"
+                  placeholder="Description"
+                />
+              </div>
+              <span class="sp-noti" id="descNoti"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fab fa-glide-g"></i
+                  ></span>
+                </div>
+                <select class="form-control" id="type">
+                  <option>Select Brand</option>
+                  <option>Iphone</option>
+                  <option>Samsung</option>
+                </select>
+              </div>
+
+              <span class="sp-noti" id="typeNoti"></span>
+            </div>
+          </form>
+
+          <!-- Modal footer -->
+          <div class="modal-footer" id="modal-footer">
+            <button id="addProdBtn" type="button" class="btn btn-success">
+              Add
+            </button>
+            <button id="updateBtn" type="button" class="btn btn-primary">
+              Update
+            </button>
+            <button
+              id="closeBtn"
+              type="button"
+              class="btn btn-danger"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+      integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"
+      integrity="sha512-xq+0+dRhI6SZOh+lDnMJEju2p2YPINflJLcYrRAsIMaXnJi6/V3lppCMCYsB2MLeF2E93r+fVo0MioY90pNzpw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- sidebar js -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#sidebarCollapse").on("click", function () {
+          $("#sidebar").toggleClass("active");
+        });
+      });
+    </script>
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"
+      integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Toast js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <!-- MAIN SCRIPTS -->
+    <!-- models -->
+    <script src="../models/Product.js"></script>
+    
+    <!-- services -->
+    <script src="../services/PhoneMgt.js"></script>
+    <!-- validation -->
+    <script src="../services/Validation.js"></script>
+    
+    <!-- member controller  -->
+    <script src="../controllers/display.js"></script>
+    <!-- main js -->
+    <script src="../controllers/main.js"></script>
+  </body>
+</html>

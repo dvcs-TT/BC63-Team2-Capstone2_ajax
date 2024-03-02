@@ -1,0 +1,255 @@
+@charset "UTF-8";
+/* global */
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: block;
+}
+
+section {
+  display: block;
+}
+
+footer {
+  display: block;
+}
+
+aside {
+  display: block;
+}
+
+nav {
+  display: block;
+}
+
+main {
+  display: block;
+}
+
+article {
+  display: block;
+}
+
+figure {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+#content {
+  background: #fff;
+  width: 100%;
+}
+
+/* admin body */
+.admin-body {
+  margin-bottom: 150px;
+}
+
+.admin-table {
+  margin-top: 100px;
+}
+
+.card-header:first-child {
+  background: linear-gradient(109.6deg, rgb(17, 151, 147) 11.2%, rgb(154, 214, 212) 55.4%, rgb(255, 233, 171) 100.2%);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+#arrowDown:before {
+  display: none;
+}
+
+button#addPhone:hover {
+  background: white;
+  color: black;
+  transition: 0.3s;
+}
+
+.product-table thead th {
+  background-color: #2ca49c;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr td.action-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#editBtn {
+  width: fit-content;
+}
+#editBtn i {
+  margin-left: 6px;
+  display: inline-block;
+}
+
+#DeleteBtn {
+  width: fit-content;
+}
+
+#deleteBtn i {
+  margin-left: 6px;
+  display: inline-block;
+}
+
+#searchBtn {
+  background-color: #404040;
+  color: white;
+  border: transparent;
+  outline: none;
+}
+
+.sort-price {
+  display: none;
+}
+
+/* admin footer */
+#admin-footer {
+  background-color: #e3e3e3;
+}
+#admin-footer ul li {
+  margin: 5px 0;
+}
+#admin-footer ul a {
+  color: #707070;
+  transition: 0.3s;
+}
+#admin-footer ul a:hover {
+  color: black;
+}
+#admin-footer p {
+  color: #404040;
+  font-weight: 500;
+  font-size: 18px;
+}
+#admin-footer p i {
+  font-size: 20px;
+}
+
+#submitFormEmailFt input {
+  background-color: #fff;
+  color: #707070;
+  width: 70%;
+  font-size: 16px;
+  padding: 13px 15px;
+  border: 1px solid #dddddd;
+  border-radius: 8px 0 0 8px;
+  flex: 1 1 auto;
+  outline: none;
+}
+#submitFormEmailFt button {
+  color: #fff;
+  background-color: #676464;
+  background-size: 200%;
+  width: 30%;
+  padding: 12px 10px;
+  text-align: center;
+  border-radius: 0 8px 8px 0;
+  border-color: transparent;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#submitFormEmailFt button:hover {
+  opacity: 0.7;
+  background-color: black;
+}
+
+.copyrights .row {
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+.footer-icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+.footer-icon a {
+  background-color: #707070;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}
+.footer-icon a:hover {
+  background: #fff;
+  color: #404040;
+}
+
+/* notification */
+.sp-noti {
+  color: rgb(148, 0, 0);
+  margin-top: 7px;
+  margin-left: 2px;
+  display: none;
+}
+.sp-noti i {
+  color: seagreen;
+}
+
+/* spinner */
+#loading {
+  background: #e8e8e8;
+  opacity: 0.7;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* sort table */
+#priceColumn {
+  cursor: pointer;
+}
+
+#priceColumn.th-sort-asc {
+  color: #fff;
+}
+#priceColumn.th-sort-asc::before {
+  content: "▴";
+  margin-right: 5px;
+}
+
+#priceColumn.th-sort-desc {
+  color: #fff;
+}
+#priceColumn.th-sort-desc::before {
+  content: "▾";
+  margin-right: 5px;
+}
+
+@media (max-width: 629px) {
+  #editBtn span {
+    display: none;
+  }
+  #deleteBtn span {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */
